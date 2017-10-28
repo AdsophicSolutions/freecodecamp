@@ -1,9 +1,6 @@
 '''
 Problem: 
 Given an array of integers return indices of two elements that sum to a given sum. 
-Input assumptions: 
-1. Values in input >= 0. 
-2. All input values < target value
 
 Algorithm: 
 We are looking to improve on brute force algorithm which is calculating sum for all combinations of integers and involves O(n ^ 2) time complexity
