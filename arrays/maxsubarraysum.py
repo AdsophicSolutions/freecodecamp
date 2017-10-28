@@ -48,8 +48,7 @@ class SolutionMaxSubArray(object):
         if not nums:
             return 0 
         
-        # Demonstration of reduce could be used to perform the same 
-        # function
+        # Use reduce to perform the same function
         return reduce(lambda max_t, num: (
             max(max_t[0] + num, num), 
             max(max_t[1], max(max_t[0] + num, num))), 
