@@ -7,8 +7,7 @@ After appearing for two technical interviews where I performed terrribly I was k
 commonly posed. By chance, I came across this wonderful page [The 30-minute guide to 
 rocking your next coding interview](https://medium.freecodecamp.org/coding-interviews-for-dummies-5e048933b82b). At this point I was 
 spending a lot of time on coding sites like [HackerRank](https://www.hackerrank.com), [CodeFights](https://www.codefights.com), 
-[LeetCode](https://www.leetcode.com), [GeeksForGeeks](https://www.geeksforgeeks.com) etc. And indeed, the list from Yangshun seemed 
-to cover problems that appear often in coding interviews. So I had a go at solving all of them, looking up solutions whenever I got stuck 
+[LeetCode](https://www.leetcode.com), [GeeksForGeeks](http://www.geeksforgeeks.org/)(NOTE:Insecure) etc. And indeed, the list from Yangshun seemed to cover problems that appear often in coding interviews. So I had a go at solving all of them, looking up solutions whenever I got stuck 
 
 Thought it would be nice to share these solutions so they could be of some help to others.  
 
