@@ -1,6 +1,18 @@
 '''
-Return true if an array of nums contains a duplicate value 
+Problem: 
+Return true if an array of nums contains a duplicate value
+
+Algorithm: 
+Store numbers encountered so far. If we encounter same number again return True. If no duplicate is found, return False 
+
+Solution: 
+Iterate through numbers array checking if each number is stored in dup dictonary, return True if we find it, else add number to the dictionary  
+
+Time Complexity: O(n)
+Space Complexity: O(n)
 '''
+print(__doc__)
+
 class SolutionContainsDuplicate(object):
     def containsDuplicate(self, nums):
         """
@@ -8,7 +20,8 @@ class SolutionContainsDuplicate(object):
         :rtype: bool
         """
         if not nums:
-            return False         
+            return False
+        # declare set to check for duplicates         
         dup = set() 
         
         for n in nums:
@@ -23,5 +36,12 @@ class SolutionContainsDuplicate(object):
 
 if __name__ == '__main__':
     s = SolutionContainsDuplicate()
-    print(s.containsDuplicate([2,3,4,7,2]))
-    print(s.containsDuplicate([2,3,4,7,8]))
+    
+    array = [2,3,4,7,2]
+    print("Input: {0}".format(array))    
+    print("Answer: {}".format(s.containsDuplicate(array)))
+    print() 
+    array = [2,3,4,7,8]
+    print("Input: {0}".format(array))    
+    print("Answer: {0}".format(s.containsDuplicate(array)))
+    
