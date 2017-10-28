@@ -6,18 +6,10 @@ Input assumptions:
 2. All input values < target value
 
 Algorithm: 
-We are looking to improve on brute force algorithm which is calculating sum for all 
-combinations of integers and involves O(n ^ 2) time complexity
+We are looking to improve on brute force algorithm which is calculating sum for all combinations of integers and involves O(n ^ 2) time complexity
 
 Solution: 
-Algorithm runs in O(n) time. Key to solving this problem is iterating through nums 
-and checking for existence of (target - current num value). We do this by declaring 
-another array of size target (calc) initialized to all -1 and setting value at 
-calc index of element value to index of element. Example: if input array contains 
-value 4 at index 2 (nums[2] = 4), we set calc[4] = 2
-
-For supporting input arrays with negative values or values exceeding target create a calc dictionary 
-instead of array.
+Key to solving this problem is iterating through nums and checking for existence of (target - current num value). We store each number encountered and its corresponding index in a dictionary and continue to iterate. If we encounter another number such that dictionary contains (target - num) return index for the number from the dictionary and index of current numbers. If no match is found return empty list 
 
 Time Complexity: O(n) 
 Space Complexity: O(n)   
@@ -31,22 +23,19 @@ class SolutionTwoSum(object):
         :type target: int
         :rtype: List[int]        
         """
-        # Create a cache size of target 
-        calc = [-1] * target
-        r_list = []
+        # Create dicctionary 
+        calc = {}
         
         for i, n in enumerate(nums):
-            # check index target - n. If index exists we've found a match!! 
-            if calc[target - n] != -1:
-                r_list.append(calc[target-n])
-                r_list.append(i)
-                break
+            # check if target - n exists. return if found  
+            if target - n in calc:
+                return [calc[target - n], i]
                         
             # set current nums index at index n in cache. 
-            if calc[n] == -1: 
-                calc[n] = i 
+            if n not in calc: 
+                calc[n] = i
         
-        return r_list
+        return []
 
 if __name__ == '__main__':
     s = SolutionTwoSum()
@@ -54,6 +43,5 @@ if __name__ == '__main__':
     target = 10 
     print("Input:")
     print("List: {} Target: {}".format(array, target))
-    print("Answer:")
-    print(s.twoSum(array, target))
+    print("Answer: {}".format(s.twoSum(array, target)))
     
