@@ -6,8 +6,7 @@ Example:
 [-1, 0 ,1]
 
 Algorithm:
-We want to improve on brute force algorithm which is calculating sum of every possible combination
-of numbers and picking unique combinations that sum to 0. Time complexity is O(n ^ 3). 
+We want to improve on brute force algorithm which is calculating sum of every possible combination of numbers and picking unique combinations that sum to 0. Time complexity is O(n ^ 3). 
 
 Our solution
 1. Sort list (O(n * log n)) 
@@ -21,12 +20,9 @@ Our solution
 
 After sort our algorithm runs in O(n ^ 2) time. 
 Additional optimizations: 
-1. In first iteration if value exceeds 0 we can break. Since every integer after is >= current integer 
-sum will also exceed 0. 
-2. If sum of value at current integer and value of si > 0 we can move to next number. Value of integer
-at ei >= so sum of three numbers will also be > 0. 
-3. We are only interested in unique sets. If integer at index is equal to previous index any combination
-for that integer value is already covered. Continue to next integer
+1. In first iteration if value exceeds 0 we can break. Since every integer after is >= current integer sum will also exceed 0. 
+2. If sum of value at current integer and value of si > 0 we can move to next number. Value of integer at ei >= so sum of three numbers will also be > 0. 
+3. We are only interested in unique sets. If integer at index is equal to previous index any combination for that integer value is already covered. Continue to next integer
 
 Time Complexity: O(n * log n) + O(n ^ 2) 
 Space Complexity: O(1) - excluding output unique set
@@ -82,9 +78,8 @@ class SolutionThreeSum():
         return [list(t) for t in unique_set] 
 
 if __name__ == '__main__':
-    print("Input:")
+    s = SolutionThreeSum()
+    
     array = [-1, 0, 1, 2, -1, -4]
-    print(array)
-    s = SolutionThreeSum() 
-    print("Answer:")
-    print(s.threeSum(array))
+    print("Input: Array = {}".format(array))
+    print("Answer: Unique combinations = {}".format(s.threeSum(array)))
